@@ -1,13 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="Container">
+      <Box
+        v-for="index in 4"
+        :key="index"
+        :img="require('@/assets/seo.svg')"
+        title="SEO"
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+        rutrum porta malesuada.
+        Etiam eu laoreet eros. Integer a augue neque. Proin ac fermentum lectus,
+        sit amet gravida felis. Nulla imperdiet luctus pretium. Donec a sagittis lorem.
+        Vivamus vitae bibendum velit. Duis vulputate sit amet augue sed viverra."
+      />
     </div>
-    <router-view/>
+
   </div>
 </template>
+<script>
+import Box from '@/components/Box.vue';
 
+export default {
+  components: {
+    Box,
+  },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -16,17 +33,7 @@
   text-align: center;
   color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.Container {
+display: flex;
 }
 </style>
