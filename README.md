@@ -1,4 +1,4 @@
-# scrollpractice
+# hover expand practice
 
 ## Project setup
 ```
