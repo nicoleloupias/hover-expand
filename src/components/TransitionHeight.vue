@@ -12,27 +12,27 @@
 <script>
 export default {
   name: 'TransitionHeight',
-   methods: {
+  methods: {
     enter(element) {
-        const { width } = getComputedStyle(element);
-        element.style.width = width;
-        element.style.position = 'absolute';
-        element.style.visibility = 'hidden';
-        element.style.height = 'auto';
+      const { width } = getComputedStyle(element);
+      element.style.width = width;
+      element.style.position = 'absolute';
+      element.style.visibility = 'hidden';
+      element.style.height = 'auto';
 
-        const { height } = getComputedStyle(element);
+      const { height } = getComputedStyle(element);
 
-        element.style.width = null;
-        element.style.position = null;
-        element.style.visibility = null;
-        element.style.height = 0;
-        getComputedStyle(element).height;
+      element.style.width = null;
+      element.style.position = null;
+      element.style.visibility = null;
+      element.style.height = 0;
+      getComputedStyle(element).height;
 
-        requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
         element.style.height = height;
-        });
+      });
     },
-   }
+  },
 };
 </script>
 <style scoped lang="scss">
